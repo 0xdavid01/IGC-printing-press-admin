@@ -1,0 +1,27 @@
+.mobile-topbar {
+  display: none;
+  align-items: center;
+  gap: 16px;
+  background: var(--navy);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.mobile-topbar-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  display: flex;
+  padding: 4px;
+}
+.mobile-topbar-brand {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (max-width: 900px) {
+  .mobile-topbar { display: flex; }
+}
