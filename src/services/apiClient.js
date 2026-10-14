@@ -1,8 +1,4 @@
-// Base API client — talks to the Spring Boot backend using session-cookie auth.
-// credentials: "include" is required so the browser sends the JSESSIONID cookie
-// on every request (per the API docs' auth model).
-
-const BASE_URL = "http://localhost:8082";
+const BASE_URL = "https://api.igcprintingpress.com";
 
 async function request(path, { method = "GET", body, isForm = false, headers = {} } = {}) {
   const res = await fetch(`${BASE_URL}${path}`, {
@@ -14,12 +10,14 @@ async function request(path, { method = "GET", body, isForm = false, headers = {
 
   if (!res.ok) {
     let message = `Request failed (${res.status})`;
+
     try {
       const errBody = await res.json();
       message = errBody.message || errBody.error || message;
     } catch {
-      // response wasn't JSON (e.g. the stacktrace page mentioned in the docs) — keep default message
+      // Keep default message when response isn't JSON.
     }
+
     const error = new Error(message);
     error.status = res.status;
     throw error;
@@ -28,15 +26,18 @@ async function request(path, { method = "GET", body, isForm = false, headers = {
   if (res.status === 204) return null;
 
   const contentType = res.headers.get("content-type") || "";
+
   if (contentType.includes("application/json")) {
     return res.json();
   }
+
   return res;
 }
 
 const api = {
   get: (path) => request(path),
   post: (path, body, opts = {}) => request(path, { method: "POST", body, ...opts }),
+  put: (path, body) => request(path, { method: "PUT", body }),
   patch: (path, body) => request(path, { method: "PATCH", body }),
   delete: (path) => request(path, { method: "DELETE" }),
 };

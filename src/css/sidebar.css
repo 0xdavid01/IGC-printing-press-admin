@@ -17,6 +17,7 @@
   gap: 12px;
   padding: 8px 8px 28px;
 }
+
 .brand-badge {
   width: 40px;
   height: 40px;
@@ -31,32 +32,79 @@
   font-size: 15px;
   flex-shrink: 0;
 }
-.brand-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
-.brand-name { color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 15px; }
-.brand-tag { color: rgba(255,255,255,0.45); font-size: 12px; }
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+/* White plate keeps the logo readable on the navy sidebar */
+.brand-logo {
+  display: inline-flex;
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+}
+
+.brand-logo-img {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 100%;
+}
+
+.brand-name {
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.brand-tag {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+}
 
 .sidebar-close {
   display: none;
   background: none;
   border: none;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   padding: 4px;
   flex-shrink: 0;
 }
-.sidebar-close:hover { color: #fff; }
 
-.sidebar-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.sidebar-close:hover {
+  color: #fff;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
 .sidebar-link {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px 14px;
   border-radius: var(--radius-md);
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 14.5px;
   font-weight: 500;
 }
-.sidebar-link:hover { color: #fff; }
+
+.sidebar-link:hover {
+  color: #fff;
+}
+
 .sidebar-link.is-active {
   background: var(--white);
   color: var(--navy);
@@ -72,6 +120,7 @@
   padding: 10px 12px;
   margin-top: 12px;
 }
+
 .profile-badge {
   width: 32px;
   height: 32px;
@@ -86,31 +135,298 @@
   font-size: 12px;
   flex-shrink: 0;
 }
-.profile-text { display: flex; flex-direction: column; gap: 1px; }
-.profile-name { color: var(--blue); font-weight: 700; font-size: 13.5px; }
-.profile-sub { color: var(--muted); font-size: 12.5px; }
+
+.profile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.profile-name {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 13.5px;
+}
+
+.profile-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Profile actions */
+
+.sidebar-profile-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.sidebar-profile-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-profile-action:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.sidebar-profile-action.sidebar-logout:hover {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.sidebar-profile-action:active {
+  background: #e5e7eb;
+}
+
+.sidebar-profile-action.sidebar-logout:active {
+  background: #fee2e2;
+}
+
+.sidebar-profile-action:focus-visible {
+  outline: 2px solid #9ca3af;
+  outline-offset: 2px;
+}
+
+/* Keep this class for compatibility */
+
+.sidebar-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #9ca3af;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Sidebar overlay */
 
 .sidebar-overlay {
   display: none;
 }
 
+/* Change password modal */
+
+.password-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(17, 24, 39, 0.55);
+}
+
+.password-modal {
+  width: 100%;
+  max-width: 460px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+}
+
+.password-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.password-modal-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 20px;
+}
+
+.password-modal-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.password-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border: 0;
+  background: #f3f4f6;
+  color: #4b5563;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.password-modal-close:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+.password-modal-close:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+}
+
+.password-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.password-field span {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.password-field input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  border-radius: 8px;
+  padding: 11px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.password-field input:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+}
+
+.password-field input:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+}
+
+.password-message {
+  margin: -4px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.password-message--error {
+  color: #dc2626;
+}
+
+.password-message--success {
+  color: #15803d;
+}
+
+.password-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.password-cancel-btn {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.password-cancel-btn:hover:not(:disabled) {
+  background: #f9fafb;
+}
+
+.password-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Mobile */
+
 @media (max-width: 900px) {
   .sidebar {
     transform: translateX(-100%);
     transition: transform 0.25s ease;
-    box-shadow: 4px 0 24px rgba(0,0,0,0.25);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
   }
+
   .sidebar.is-open {
     transform: translateX(0);
   }
+
   .sidebar-close {
     display: flex;
   }
+
   .sidebar-overlay {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 55;
+  }
+}
+
+@media (max-width: 600px) {
+  .password-modal-overlay {
+    padding: 12px;
+  }
+
+  .password-modal {
+    max-height: calc(100vh - 24px);
+  }
+
+  .password-modal-header,
+  .password-form {
+    padding: 18px;
+  }
+
+  .password-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .password-modal-actions button {
+    width: 100%;
   }
 }

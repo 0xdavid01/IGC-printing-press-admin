@@ -1,6 +1,16 @@
 import api from "./apiClient";
 
-// POST /api/admin/inventory — ADMIN, SUPER_ADMIN
-export function createInventoryItem({ category, item, price, size, pricingUnit, minArea }) {
-  return api.post("/api/admin/inventory", { category, item, price, size, pricingUnit, minArea });
+export function getAdminInventory() {
+  return api.get("/api/admin/inventory");
+}
+
+export function createInventoryItem(requestData) {
+  return api.post("/api/admin/inventory", requestData);
+}
+
+export function updateInventoryItem(inventoryId, requestData) {
+  return api.put(
+    `/api/admin/inventory/${inventoryId}`,
+    requestData
+  );
 }

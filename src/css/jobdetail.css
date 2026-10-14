@@ -1,0 +1,515 @@
+.job-detail-page {
+  width: 100%;
+}
+
+.job-detail-back {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  margin-bottom: 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.job-detail-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.job-detail-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.job-detail-title-row .page-title {
+  margin: 0;
+}
+
+.job-detail-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #f1f5f9;
+}
+
+.job-detail-status--pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.job-detail-status--in_progress {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.job-detail-status--completed {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.job-detail-status--cancelled {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.job-detail-status-control {
+  min-width: 190px;
+}
+
+.job-detail-status-control label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.job-detail-status-control label span {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.job-detail-status-control select {
+  height: 42px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  padding: 0 12px;
+  background: white;
+  font-size: 14px;
+}
+
+.job-detail-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.job-detail-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.job-detail-card-header h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.job-detail-card-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.job-customer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.job-customer-info > strong {
+  font-size: 18px;
+}
+
+.job-customer-info > span {
+  color: #475569;
+  font-size: 14px;
+}
+
+.job-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.job-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.job-item-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.job-item-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+.job-item-title strong {
+  font-size: 15px;
+}
+
+.job-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.job-item p {
+  margin: 8px 0 0;
+  color: #475569;
+  font-size: 13px;
+}
+
+.job-design-tag {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.job-item-side {
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.job-item-side > strong {
+  font-size: 16px;
+}
+
+.job-download-btn {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  border-radius: 7px;
+  padding: 8px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.job-download-btn:hover {
+  background: #f8fafc;
+}
+
+.job-payment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.job-payment-summary > div {
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  padding: 15px;
+}
+
+.job-payment-summary span {
+  display: block;
+  margin-bottom: 6px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.job-payment-summary strong {
+  font-size: 18px;
+}
+
+.job-payment-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 20px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.job-payment-details strong {
+  color: #111827;
+}
+
+.job-detail-empty {
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+}
+
+.job-detail-loading {
+  padding: 50px;
+  text-align: center;
+  color: #64748b;
+}
+
+.job-topup-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.job-topup-modal {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.job-topup-close {
+  border: 0;
+  background: transparent;
+  font-size: 25px;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.job-topup-breakdown {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.job-topup-breakdown > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 15px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.job-topup-breakdown > div:last-child {
+  border-bottom: 0;
+}
+
+.job-topup-breakdown span {
+  color: #64748b;
+}
+
+.job-topup-breakdown strong {
+  color: #111827;
+}
+
+.job-topup-total {
+  background: #f8fafc;
+}
+
+.job-topup-total strong {
+  font-size: 16px;
+}
+
+.job-topup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .job-detail-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .job-detail-status-control {
+    width: 100%;
+  }
+
+  .job-payment-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .job-item-main {
+    flex-direction: column;
+  }
+
+  .job-item-side {
+    min-width: 0;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .job-topup-actions {
+    flex-direction: column-reverse;
+  }
+
+  .job-topup-actions button {
+    width: 100%;
+  }
+}
+.job-payment-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.job-payment-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.job-payment-modal {
+  width: 100%;
+  max-width: 480px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.2);
+}
+
+.job-manual-payment-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.job-manual-payment-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 13px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #f8fafc;
+}
+
+.job-manual-payment-info span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.job-manual-payment-info strong {
+  color: #111827;
+  font-size: 14px;
+}
+
+.job-manual-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-amount-input {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  margin-top: 7px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.payment-amount-input > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 100%;
+  border-right: 1px solid #dbe2ea;
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+}
+
+.payment-amount-input input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0 12px;
+  font-size: 14px;
+}
+
+.payment-method-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.payment-method-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.payment-method-options label:has(input:checked) {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.payment-method-options input {
+  margin: 0;
+}
+
+.job-manual-payment-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .job-payment-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .job-payment-actions button {
+    width: 100%;
+  }
+
+  .job-manual-payment-info {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-method-options {
+    grid-template-columns: 1fr;
+  }
+
+  .job-manual-payment-actions {
+    flex-direction: column-reverse;
+  }
+
+  .job-manual-payment-actions button {
+    width: 100%;
+  }
+}

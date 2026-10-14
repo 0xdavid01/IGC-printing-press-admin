@@ -1,0 +1,9 @@
+.access-denied {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  max-width: 480px;
+}
+.access-denied .page-title { margin-bottom: 8px; }
+.access-denied .page-sub { margin-bottom: 0; }
